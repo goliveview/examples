@@ -1,0 +1,17 @@
+{{ define "todos"}}
+    <div id="todos">
+        {{ range .todos}}
+            <div>
+                <p>{{.Text}}</p>
+                <button  data-action="glv#change"
+                         data-glv-event-id-param="todos/del"
+                         data-glv-id-param="{{.ID}}"
+                         class="button has-background-primary">
+                    X
+                </button>
+            </div>
+        {{else}}
+            <div>Nothing here !</div>
+        {{end}}
+    </div>
+{{end}}
