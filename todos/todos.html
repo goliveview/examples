@@ -2,7 +2,7 @@
     <div id="todos">
         {{ range .todos}}
             <div>
-                <p>{{.Text}}</p>
+                {{.Text}}
                 <button  data-action="glv#change"
                          data-glv-event-id-param="todos/del"
                          data-glv-id-param="{{.ID}}"
