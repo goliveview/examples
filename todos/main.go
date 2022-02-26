@@ -30,7 +30,7 @@ func (c *TodosView) Partials() []string {
 	return []string{"todos.html"}
 }
 
-func (c *TodosView) OnMount(w http.ResponseWriter, r *http.Request) (glv.Status, glv.M) {
+func (c *TodosView) OnMount(ctx glv.Context) (glv.Status, glv.M) {
 	var todos []Todo
 	if err := c.db.Find(&todos, &bolthold.Query{}); err != nil {
 		return glv.Status{
@@ -41,39 +41,29 @@ func (c *TodosView) OnMount(w http.ResponseWriter, r *http.Request) (glv.Status,
 }
 
 func (c *TodosView) OnEvent(ctx glv.Context) error {
+	var todo Todo
+	if err := ctx.Event().DecodeParams(&todo); err != nil {
+		return err
+	}
+
 	switch ctx.Event().ID {
 	case "todos/new":
-		var todo Todo
-		if err := ctx.Event().DecodeParams(&todo); err != nil {
-			return err
-		}
 		if err := c.db.Insert(bolthold.NextSequence(), &todo); err != nil {
 			return err
 		}
-		// list updated todos
-		var todos []Todo
-		if err := c.db.Find(&todos, &bolthold.Query{}); err != nil {
-			return err
-		}
-		ctx.DOM().Morph("#todos", "todos", glv.M{"todos": todos})
 	case "todos/del":
-		var todo Todo
-		if err := ctx.Event().DecodeParams(&todo); err != nil {
-			return err
-		}
 		if err := c.db.Delete(todo.ID, &todo); err != nil {
 			return err
 		}
-		// list updated todos
-		var todos []Todo
-		if err := c.db.Find(&todos, &bolthold.Query{}); err != nil {
-			return err
-		}
-		ctx.DOM().Morph("#todos", "todos", glv.M{"todos": todos})
-
 	default:
 		log.Printf("warning:handler not found for event => \n %+v\n", ctx.Event())
 	}
+	// list updated todos
+	var todos []Todo
+	if err := c.db.Find(&todos, &bolthold.Query{}); err != nil {
+		return err
+	}
+	ctx.DOM().Morph("#todos", "todos", glv.M{"todos": todos})
 	return nil
 }
 

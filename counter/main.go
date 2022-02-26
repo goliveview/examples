@@ -19,7 +19,7 @@ func (c *Counter) Partials() []string {
 	return []string{"count.html"}
 }
 
-func (c *Counter) OnMount(w http.ResponseWriter, r *http.Request) (glv.Status, glv.M) {
+func (c *Counter) OnMount(ctx glv.Context) (glv.Status, glv.M) {
 	return glv.Status{Code: 200}, glv.M{
 		"val": 0,
 	}
