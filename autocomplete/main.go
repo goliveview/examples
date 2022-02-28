@@ -61,7 +61,7 @@ func (s *Search) OnEvent(ctx glv.Context) error {
 		if err := ctx.Event().DecodeParams(req); err != nil {
 			return err
 		}
-		ctx.DOM().Morph("#cities", "cities", glv.M{
+		ctx.DOM().Morph("#list_cities", "cities", glv.M{
 			"cities": getCities(req.Query),
 		})
 	default:

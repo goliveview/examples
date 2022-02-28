@@ -1,11 +1,7 @@
 {{ define "cities"}}
-    <div id="cities">
-        <datalist id="list_cities">
-            <select size="8">
-                {{range .cities}}
-                    <option value="{{.}}"></option>
-                {{end}}
-            </select>
-        </datalist>
-    </div>
+        <select id="list_cities">
+            {{range .cities}}
+                <option value="{{.}}"></option>
+            {{end}}
+        </select>
 {{end}}
