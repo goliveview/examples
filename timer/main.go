@@ -25,7 +25,7 @@ type Timer struct {
 }
 
 func (t *Timer) Content() string {
-	return "timer.html"
+	return "app.html"
 }
 
 func (t *Timer) Partials() []string {

@@ -12,7 +12,7 @@ type Counter struct {
 }
 
 func (c *Counter) Content() string {
-	return "counter.html"
+	return "app.html"
 }
 
 func (c *Counter) Partials() []string {
