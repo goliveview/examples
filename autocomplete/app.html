@@ -19,15 +19,19 @@
     <div class="columns is-mobile is-centered is-vcentered">
         <div class="column is-one-third-desktop has-text-centered is-narrow">
             <div data-controller="glv">
-                {{template "count" .}}
-                <button class="button has-background-primary"
-                        data-action="glv#change"
-                        data-glv-event-id-param="inc">+
-                </button>
-                <button class="button has-background-primary"
-                        data-action="glv#change"
-                        data-glv-event-id-param="dec">-
-                </button>
+                <div class="py-5">
+                    <input name="query"
+                           class="input"
+                           type="search"
+                           list="list_cities"
+                           placeholder="Search Cities"
+                           aria-label="Search Cities"
+                           autocomplete="off"
+                           data-action="glv#change"
+                           data-glv-event-id-param="search">
+                </div>
+                {{template "cities" .}}
+                </div>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-module github.com/goliveview/examples/counter
+module github.com/goliveview/examples/autocomplete
 
 go 1.17
 
