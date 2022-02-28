@@ -23,13 +23,15 @@
                     <input name="query"
                            class="input"
                            list="list_cities"
+                           type="search"
                            placeholder="Search Cities"
                            aria-label="Search Cities"
                            autocomplete="off"
                            data-action="glv#change"
-                           data-glv-event-id-param="autocomplete">
+                           data-glv-event-id-param="autocomplete"
+                           autofocus>
                 </div>
-                <datalist>
+                <datalist id="list_cities">
                     {{template "cities" .}}
                 </datalist>
             </div>
