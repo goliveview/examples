@@ -1,9 +1,7 @@
 {{ define "cities"}}
-
-    <div>
+    <datalist id="list_cities">
         {{range .cities}}
             <option value="{{.}}"></option>
         {{end}}
-    </div>
     </datalist>
 {{end}}

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -32,17 +33,13 @@ func (c *Counter) OnEvent(ctx glv.Context) error {
 		ctx.Store().Get("val", &val)
 		val += 1
 		ctx.Store().Put(glv.M{"val": val})
-		ctx.DOM().Morph("#count", "count", glv.M{
-			"val": val,
-		})
+		ctx.DOM().SetInnerHTML("#count", fmt.Sprintf(`<p>%v</p>`, val))
 	case "dec":
 		var val int
 		ctx.Store().Get("val", &val)
 		val -= 1
 		ctx.Store().Put(glv.M{"val": val})
-		ctx.DOM().Morph("#count", "count", glv.M{
-			"val": val,
-		})
+		ctx.DOM().SetInnerHTML("#count", fmt.Sprintf(`<p>%v</p>`, val))
 	default:
 		log.Printf("warning:handler not found for event => \n %+v\n", ctx.Event())
 	}
