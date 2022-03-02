@@ -2,7 +2,7 @@ module github.com/goliveview/examples
 
 go 1.17
 
-// replace github.com/goliveview/controller => ../../controller
+//replace github.com/goliveview/controller => ../controller
 
 require (
 	github.com/Masterminds/goutils v1.1.1 // indirect
@@ -12,7 +12,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dlclark/regexp2 v1.4.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
-	github.com/goliveview/controller v0.0.7
+	github.com/goliveview/controller v0.0.8
 	github.com/google/uuid v1.2.0 // indirect
 	github.com/gorilla/securecookie v1.1.1 // indirect
 	github.com/gorilla/sessions v1.2.1 // indirect
