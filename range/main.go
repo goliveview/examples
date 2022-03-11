@@ -31,7 +31,7 @@ func (r *Range) OnMount(ctx glv.Context) (glv.Status, glv.M) {
 	}
 }
 
-func (r *Range) OnEvent(ctx glv.Context) error {
+func (r *Range) OnLiveEvent(ctx glv.Context) error {
 	switch ctx.Event().ID {
 	case "update_item_count":
 		req := new(CountRequest)

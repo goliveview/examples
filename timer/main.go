@@ -38,7 +38,7 @@ func (t *Timer) OnMount(ctx glv.Context) (glv.Status, glv.M) {
 	}
 }
 
-func (t *Timer) OnEvent(ctx glv.Context) error {
+func (t *Timer) OnLiveEvent(ctx glv.Context) error {
 	switch ctx.Event().ID {
 	case "tick":
 		ctx.DOM().Morph("#time", "time", glv.M{
@@ -51,7 +51,7 @@ func (t *Timer) OnEvent(ctx glv.Context) error {
 	return nil
 }
 
-func (t *Timer) EventReceiver() <-chan glv.Event {
+func (t *Timer) LiveEventReceiver() <-chan glv.Event {
 	return t.ch
 }
 

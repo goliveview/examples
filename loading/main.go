@@ -16,7 +16,7 @@ func (l *Loading) Content() string {
 	return "app.html"
 }
 
-func (l *Loading) OnEvent(ctx glv.Context) error {
+func (l *Loading) OnLiveEvent(ctx glv.Context) error {
 	switch ctx.Event().ID {
 	case "show_loader":
 		ctx.DOM().AddClass("#loading-modal", "is-active")

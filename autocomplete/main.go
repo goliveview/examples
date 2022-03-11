@@ -54,7 +54,7 @@ func (s *Search) OnMount(_ glv.Context) (glv.Status, glv.M) {
 	return glv.Status{Code: 200}, nil
 }
 
-func (s *Search) OnEvent(ctx glv.Context) error {
+func (s *Search) OnLiveEvent(ctx glv.Context) error {
 	switch ctx.Event().ID {
 	case "autocomplete":
 		req := new(QueryRequest)

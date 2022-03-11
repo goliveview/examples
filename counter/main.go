@@ -26,7 +26,7 @@ func (c *Counter) OnMount(ctx glv.Context) (glv.Status, glv.M) {
 	}
 }
 
-func (c *Counter) OnEvent(ctx glv.Context) error {
+func (c *Counter) OnLiveEvent(ctx glv.Context) error {
 	switch ctx.Event().ID {
 	case "inc":
 		var val int

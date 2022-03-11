@@ -40,7 +40,7 @@ func (c *TodosView) OnMount(ctx glv.Context) (glv.Status, glv.M) {
 	return glv.Status{Code: 200}, glv.M{"todos": todos}
 }
 
-func (c *TodosView) OnEvent(ctx glv.Context) error {
+func (c *TodosView) OnLiveEvent(ctx glv.Context) error {
 	var todo Todo
 	if err := ctx.Event().DecodeParams(&todo); err != nil {
 		return err
