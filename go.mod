@@ -10,7 +10,7 @@ require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dlclark/regexp2 v1.4.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
-	github.com/goliveview/controller v0.0.9
+	github.com/goliveview/controller v0.0.11
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/gorilla/securecookie v1.1.1 // indirect
 	github.com/gorilla/sessions v1.2.1 // indirect
@@ -27,4 +27,7 @@ require (
 	golang.org/x/sys v0.0.0-20220513210249-45d2b4557a2a // indirect
 )
 
-require go.etcd.io/bbolt v1.3.6 // indirect
+require (
+	go.etcd.io/bbolt v1.3.6 // indirect
+	golang.org/x/exp v0.0.0-20220428152302-39d4317da171 // indirect
+)
