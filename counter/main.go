@@ -21,8 +21,10 @@ func (c *Counter) Partials() []string {
 }
 
 func (c *Counter) OnMount(ctx glv.Context) (glv.Status, glv.M) {
+	var val int
+	ctx.Store().Get("val", &val)
 	return glv.Status{Code: 200}, glv.M{
-		"val": 0,
+		"val": val,
 	}
 }
 

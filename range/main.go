@@ -21,10 +21,6 @@ func (r *Range) Content() string {
 	return "app.html"
 }
 
-func (r *Range) Partials() []string {
-	return []string{"count.html"}
-}
-
 func (r *Range) OnMount(ctx glv.Context) (glv.Status, glv.M) {
 	return glv.Status{Code: 200}, glv.M{
 		"val": 0,

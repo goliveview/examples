@@ -3,7 +3,7 @@
         {{ range .todos}}
             <div>
                 {{.Text}}
-                <button  data-action="glv#change"
+                <button  data-action="glv#event"
                          data-glv-event-id-param="todos/del"
                          data-glv-id-param="{{.ID}}"
                          class="button has-background-primary">

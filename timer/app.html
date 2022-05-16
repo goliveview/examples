@@ -31,11 +31,11 @@
         </p>
     </div>
 </footer>
-<script src="https://unpkg.com/goliveview-stimulus@0.0.4/dist/index.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/goliveview@0.0.1/dist/index.js" crossorigin="anonymous"></script>
 <script type="module">
     import {Application} from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
     window.Stimulus = Application.start()
-    Stimulus.register("glv", goliveviewStimulus.GoliveviewController)
+    Stimulus.register("glv", goliveview.GoliveviewController)
 </script>
 </body>
 </html>

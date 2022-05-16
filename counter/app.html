@@ -21,11 +21,11 @@
             <div data-controller="glv">
                 {{template "count" .}}
                 <button class="button has-background-primary"
-                        data-action="glv#change"
+                        data-action="glv#event"
                         data-glv-event-id-param="inc">+
                 </button>
                 <button class="button has-background-primary"
-                        data-action="glv#change"
+                        data-action="glv#event"
                         data-glv-event-id-param="dec">-
                 </button>
             </div>
@@ -39,11 +39,12 @@
         </p>
     </div>
 </footer>
-<script src="https://unpkg.com/goliveview-stimulus@0.0.4/dist/index.js" crossorigin="anonymous"></script>
+<!-- <script src="http://localhost:8000/index.js"></script> -->
+<script src="https://unpkg.com/goliveview@latest/dist/index.js" crossorigin="anonymous"></script>
 <script type="module">
     import {Application} from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
     window.Stimulus = Application.start()
-    Stimulus.register("glv", goliveviewStimulus.GoliveviewController)
+    Stimulus.register("glv", goliveview.Dispatcher)
 </script>
 </body>
 </html>

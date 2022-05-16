@@ -25,7 +25,7 @@
                        max="10"
                        name="count"
                        value="0"
-                       data-action="glv#change"
+                       data-action="glv#event"
                        data-glv-event-id-param="update_item_count"/>
                 <div id="total">$0</div>
             </div>
@@ -39,11 +39,11 @@
         </p>
     </div>
 </footer>
-<script src="https://unpkg.com/goliveview-stimulus@0.0.4/dist/index.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/goliveview@latest/dist/index.js" crossorigin="anonymous"></script>
 <script type="module">
     import {Application} from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
     window.Stimulus = Application.start()
-    Stimulus.register("glv", goliveviewStimulus.GoliveviewController)
+    Stimulus.register("glv", goliveview.Dispatcher)
 </script>
 </body>
 </html>

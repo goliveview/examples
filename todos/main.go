@@ -72,7 +72,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	glvc := glv.Websocket("goliveview-counter", glv.DevelopmentMode(true))
+	glvc := glv.Websocket("goliveview-todos", glv.DevelopmentMode(true))
 	http.Handle("/", glvc.Handler(&TodosView{
 		db: db,
 	}))
